@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/page"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Intro_Activity">
+    <View
+        android:id="@+id/health1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="-35dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/text_logo"
+        android:background="@drawable/icon_green"/>
+
+    <View
+        android:id="@+id/health2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/text_logo"
+        android:layout_toLeftOf="@id/text_logo"
+        android:layout_marginTop="-40dp"
+        android:background="@drawable/icon_mediumgreen"/>
+    <View
+        android:id="@+id/health3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="-35dp"
+        android:layout_below="@id/text_logo"
+        android:layout_toEndOf="@id/text_logo"
+        android:layout_marginStart="-40dp"
+        android:background="@drawable/icon_mediumgreen"/>
+    <View
+        android:id="@+id/health4"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="35dp"
+        android:layout_toEndOf="@id/health2"
+        android:layout_below="@id/text_logo"
+        android:background="@drawable/icon_green"/>
+    <View
+        android:id="@+id/health5"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/text_logo"
+        android:layout_toEndOf="@id/health1"
+        android:background="@drawable/icon_green"/>
+
+    <View
+        android:id="@+id/health6"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/health5"
+        android:layout_toEndOf="@id/health4"
+        android:background="@drawable/icon_darkgreen"/>
+
+    <View
+        android:id="@+id/health7"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/health1"
+        android:layout_toEndOf="@id/health2"
+        android:layout_marginStart="30dp"
+        android:background="@drawable/icon_lightgreen"/>
+    <View
+        android:id="@+id/health8"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/text_logo"
+        android:layout_toEndOf="@id/health2"
+        android:layout_marginStart="30dp"
+        android:background="@drawable/icon_mediumgreen"/>
+    <View
+        android:id="@+id/health9"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_above="@id/text_logo"
+        android:layout_toEndOf="@id/health5"
+        android:background="@drawable/icon_darkgreen"/>
+    <View
+        android:id="@+id/health10"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="-40dp"
+        android:layout_above="@id/health8"
+        android:layout_toEndOf="@id/health6"
+        android:background="@drawable/icon_lightgreen"/>
+
+    <LinearLayout
+        android:id="@+id/wrap_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_alignStart="@id/text_logo"
+        android:layout_marginTop="200dp"/>
+    <LinearLayout
+        android:id="@+id/text_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/wrap_logo"
+        android:layout_marginTop="-20dp"
+        >
+        <TextView
+            android:id="@+id/health_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/baloo"
+            android:text="HEALTH"
+            android:textAppearance="@style/logo_color" />
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/baloo"
+            android:text="WEIGHT"
+            android:layout_marginTop="-30dp"
+            android:textAppearance="@style/logo_color" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/owner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="70dp"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bellota_light"
+            android:text="DEVLOPPED BY LAHCEN"
+            android:textSize="12sp"
+            android:textColor="#585757" />
+    </LinearLayout>
+
+</RelativeLayout>

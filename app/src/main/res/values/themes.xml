@@ -1,0 +1,42 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.HealthWeight" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+    <style name="logo_color">
+        <item name="android:textSize">48sp</item>
+        <item name="android:textColor">#078F56</item>
+
+    </style>
+    <style name="logo_wrap">
+        <item name="android:textSize">48sp</item>
+        <item name="android:textColor">#078F56</item>
+        <item name="android:fontFamily">@font/bevan</item>
+    </style>
+    <style name="loss_weight">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="lorem_ipsum">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="get_started">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+    <style name="health_weig">
+        <item name="android:textSize">36sp</item>
+        <item name="android:textColor">#078F56</item>
+    </style>
+    <style name="header_greating">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#040404</item>
+    </style>
+    <style name="bellow_greating">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#545252</item>>
+    </style>
+    <style name="Theme.HealthWeight" parent="Base.Theme.HealthWeight" />
+</resources>
