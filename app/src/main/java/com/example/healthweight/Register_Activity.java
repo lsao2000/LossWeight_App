@@ -19,11 +19,12 @@ public class Register_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        login    = (TextView) findViewById(R.id.login);
+        login    = (TextView) findViewById(R.id.login_text);
         fullName = (EditText) findViewById(R.id.fullname);
         email    = (EditText) findViewById(R.id.email);
-        password = (EditText) findViewById(R.id.password);
-        register = (Button) findViewById(R.id.register);
+        password = (EditText) findViewById(R.id.password_register);
+        register = (Button) findViewById(R.id.registerbtn);
+
         login.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -58,6 +59,10 @@ public class Register_Activity extends AppCompatActivity {
                     }else {
                         validEmail = true;
                     }
+                }
+                if(validEmail && validfullName ){
+                    Intent CompleteRegister = new Intent(Register_Activity.this, Complete_Register.class);
+                    startActivity(CompleteRegister);
                 }
             }
         });
