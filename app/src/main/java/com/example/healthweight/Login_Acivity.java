@@ -19,7 +19,7 @@ public class Login_Acivity extends AppCompatActivity {
         setContentView(R.layout.activity_login_acivity);
         login = (Button) findViewById(R.id.loginbtn);
         register = (TextView) findViewById(R.id.register_text);
-        username = (EditText) findViewById(R.id.username);
+        username = (EditText) findViewById(R.id.usernameLogin);
         pwd      = (EditText) findViewById(R.id.password_login);
         register.setOnClickListener(new View.OnClickListener(){
             @Override

@@ -108,7 +108,7 @@
                 >
 
                 <EditText
-                    android:id="@+id/username"
+                    android:id="@+id/usernameLogin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -117,6 +117,7 @@
                     android:layout_marginBottom="10dp"
                     android:fontFamily="@font/poppins"
                     android:textSize="12sp"
+                    android:inputType="textPersonName"
                     android:textColorHint="#878181"
                     android:hint="Enter  your  username" />
             </LinearLayout>
@@ -143,6 +144,7 @@
                     android:fontFamily="@font/poppins"
                     android:textSize="12sp"
                     android:textColorHint="#878181"
+                    android:inputType="textPassword"
                     android:hint="Enter your Password" />
             </LinearLayout>
             <LinearLayout
