@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -19,8 +20,7 @@ public class Complete_Register extends AppCompatActivity {
     private ProgressBar completing;
     public static int count;
     private LinearLayout maleGender, femaleGender;
-    private EditText username, heightValue, weighValue;
-    private String gender, usernameText, weightText, heightText;
+    private String gender, usernameText, weightText, heightText, emailText, passwordText, fullNameText;
     private boolean validGender, validUsername, validWeight, validHeight ;
     private String[] heightItem = {"Cm", "In"};
     @Override
@@ -29,6 +29,9 @@ public class Complete_Register extends AppCompatActivity {
         setContentView(R.layout.activity_complete_register);
         completing   = (ProgressBar) findViewById(R.id.progressBar);
         next         = (Button) findViewById(R.id.nextStep);
+        Intent gettingData = getIntent();
+        fullNameText = gettingData.getStringExtra("fullname");
+        emailText = gettingData.getStringExtra("email");
 //        heightValue  = (EditText) findViewById(R.id.height_value);
 //        weighValue   = (EditText) findViewById(R.id.weight_value);
         // Set array adapter to the spinner as default value.
@@ -69,24 +72,24 @@ public class Complete_Register extends AppCompatActivity {
                     case 2:
 //                        weightText = weightFragment.get.getText().toString();
 //                        heightText = heightValue.getText().toString();
-                        if(weightText.isEmpty()){
-                            validWeight = false;
-                            count = 1;
-                        }else{
-                            validWeight = true;
-                        }
-                        if(heightText.isEmpty()){
-                            validHeight = false;
-                            count = 1;
-                        }else{
-                            validHeight = true;
-                        }
-                        if(validHeight && validWeight){
-                            count = 2;
-                            completing.setProgress(88);
-                            replaceFragment(new AddUserToDatabase_fragment());
-                        }
-                        break;
+//                        if(weightText.isEmpty()){
+//                            validWeight = false;
+//                            count = 1;
+//                        }else{
+//                            validWeight = true;
+//                        }
+//                        if(heightText.isEmpty()){
+//                            validHeight = false;
+//                            count = 1;
+//                        }else{
+//                            validHeight = true;
+//                        }
+//                        if(validHeight && validWeight){
+//                            count = 2;
+//                            completing.setProgress(88);
+//                            replaceFragment(new AddUserToDatabase_fragment());
+//                        }
+//                        break;
                 }
             }
         });
@@ -97,4 +100,5 @@ public class Complete_Register extends AppCompatActivity {
         fragmentTransaction.replace(R.id.frame, fragment);
         fragmentTransaction.commit();
     }
+
 }

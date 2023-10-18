@@ -8,7 +8,7 @@ import android.widget.TextView;
 import android.widget.EditText;
 import android.content.Intent;
 import android.view.View;
-
+import android.view.WindowManager;
 public class Register_Activity extends AppCompatActivity {
     private TextView login;
     private String fulnUser, emailUser, passUser;
@@ -18,6 +18,7 @@ public class Register_Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_register);
         login    = (TextView) findViewById(R.id.login_text);
         fullName = (EditText) findViewById(R.id.fullname);
@@ -62,6 +63,9 @@ public class Register_Activity extends AppCompatActivity {
                 }
                 if(validEmail && validfullName ){
                     Intent CompleteRegister = new Intent(Register_Activity.this, Complete_Register.class);
+                    CompleteRegister.putExtra("fullname", fulnUser);
+                    CompleteRegister.putExtra("email", emailUser);
+                    CompleteRegister.putExtra("password", passUser);
                     startActivity(CompleteRegister);
                 }
             }
