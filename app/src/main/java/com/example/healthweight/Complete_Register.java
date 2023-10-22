@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -14,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class Complete_Register extends AppCompatActivity {
     private Button next;
@@ -22,74 +24,49 @@ public class Complete_Register extends AppCompatActivity {
     private LinearLayout maleGender, femaleGender;
     private String gender, usernameText, weightText, heightText, emailText, passwordText, fullNameText;
     private boolean validGender, validUsername, validWeight, validHeight ;
-    private String[] heightItem = {"Cm", "In"};
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complete_register);
         completing   = (ProgressBar) findViewById(R.id.progressBar);
         next         = (Button) findViewById(R.id.nextStep);
+
+        // getting extra data from registerActivity using Intent.
         Intent gettingData = getIntent();
         fullNameText = gettingData.getStringExtra("fullname");
         emailText = gettingData.getStringExtra("email");
-//        heightValue  = (EditText) findViewById(R.id.height_value);
-//        weighValue   = (EditText) findViewById(R.id.weight_value);
-        // Set array adapter to the spinner as default value.
-//        ArrayAdapter<String> heightItems = new ArrayAdapter<String>(Complete_Register.this, android.R.layout.simple_spinner_dropdown_item, heightItem);
-//        height.setAdapter(heightItems);
-        // The default fragment in the activity_complete_register.
+        passwordText = gettingData.getStringExtra("password");
+
+        // set deafult fragment to the frame layout.
         replaceFragment(new GenderUsername_fragment());
+        // Create instance of the persone class.
+        Personne personne = new Personne(fullNameText, emailText, passwordText);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 count ++;
                 switch(count){
                     case 1:
-//                        usernameText = username.getText().toString();
-//                        if(gender.isEmpty()){
-//                            validGender = false;
-//                            count = 0;
-//                        }else{
-//                            validGender = true;
-//                        }
-//                        if(usernameText.isEmpty()){
-//                            username.setError("Please fill out this box");
-//                            validUsername = false;
-//                            count = 0;
-//                        }else{
-//                            validUsername = true;
-//                        }
-//                        if(validUsername && validGender){
+                        String gender = GenderUsername_fragment.getGenderText();
+                        String username = GenderUsername_fragment.getUsernameText();
+                        Personne.setUsername(username);
+                        Personne.setGender(gender);
                         completing.setProgress(58);
                         Fragment weightFragment = new WeightHeight_fragment();
                         FragmentManager fragmentManager = getSupportFragmentManager();
                         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame, weightFragment);
                         fragmentTransaction.commit();
-//                            replaceFragment(new WeightHeight_fragment());
-//                        }
+                        Toast.makeText(getApplicationContext(), personne.toString(), Toast.LENGTH_SHORT).show();
                         break;
                     case 2:
-//                        weightText = weightFragment.get.getText().toString();
-//                        heightText = heightValue.getText().toString();
-//                        if(weightText.isEmpty()){
-//                            validWeight = false;
-//                            count = 1;
-//                        }else{
-//                            validWeight = true;
-//                        }
-//                        if(heightText.isEmpty()){
-//                            validHeight = false;
-//                            count = 1;
-//                        }else{
-//                            validHeight = true;
-//                        }
-//                        if(validHeight && validWeight){
-//                            count = 2;
-//                            completing.setProgress(88);
-//                            replaceFragment(new AddUserToDatabase_fragment());
-//                        }
-//                        break;
+                        completing.setProgress(58);
+                        Fragment completeFragement = new AddUserToDatabase_fragment();
+                        replaceFragment(completeFragement);
+                        Toast.makeText(getApplicationContext(), personne.toString(), Toast.LENGTH_SHORT).show();
+                        break;
                 }
             }
         });

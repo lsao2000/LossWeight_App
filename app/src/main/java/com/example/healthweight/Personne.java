@@ -1,55 +1,81 @@
 package com.example.healthweight;
+import androidx.annotation.NonNull;
+
 import java.util.ArrayList;
-public class Personne {
-    private  String fullname;
-    private String email;
-    private String password;
-    private String gender;
-    private String username;
-    private Float weight;
-    private Float height;
-    private static ArrayList information = new ArrayList<>();
+public class  Personne {
+    private static String fullname;
+    private static String email;
+    private static String password;
+    private static String gender;
+    private static String username;
+    private static Float weight;
+    private static Float height;
     Personne(){
 
     }
     Personne(String fullname, String email, String password){
-        this.fullname = fullname;
-        this.email = email;
-        this.password = password;
+        Personne.fullname = fullname;
+        Personne.email = email;
+        Personne.password = password;
     }
 
 
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
-    }
-    public void setEmail(String email) {
-        this.email = email;
-    }
-    public void setPassword(String password) {
-        this.password = password;
+    public String getFullname() {
+        return fullname;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public String getPassword() {
+        return password;
     }
 
-    public void setWeight(Float weight) {
-        this.weight = weight;
-    }
-    public void setHeight(Float height) {
-        this.height = height;
+    public String getGender() {
+        return gender;
     }
 
-
-    public static void setInformation(ArrayList information) {
-        Personne.information = information;
+    public String getUsername() {
+        return username;
     }
 
-    public static ArrayList getInformation() {
-        return information;
+    public Float getWeight() {
+        return weight;
+    }
+
+    public Float getHeight() {
+        return height;
+    }
+
+    public static void setFullname(String newFullname) {
+
+        fullname = newFullname;
+    }
+    public static void setEmail(String newEmail) {
+        email = newEmail;
+    }
+    public static void setPassword(String newPassword) {
+        password = newPassword;
+    }
+
+    public static void setGender(String newGender) {
+        Personne.gender = newGender;
+    }
+
+    public static void setUsername(String newUsername) {
+        Personne.username = newUsername;
+    }
+
+    public static void setWeight(Float newWeight) {
+        weight = newWeight;
+    }
+    public static void setHeight(Float newHeight) {
+        height = newHeight;
+    }
+
+    public  String toString() {
+        return "full name: "+fullname +" Username : "+username + " Email : "+email+
+                " password : "+ password + " height : "+ height + " weight : "+ weight+ " Gender : "+ gender;
     }
 }
